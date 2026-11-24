@@ -14,7 +14,10 @@ load_dotenv()  # loads the .env file into environment variables
 def _required(name: str) -> str:
     value = os.getenv(name)
     if not value:
-        raise RuntimeError(f"{name} is not set. Add it to your .env file.")
+        raise RuntimeError(
+            f"{name} is not set. Add it to your .env file locally, or to the "
+            "Environment Variables of your hosting service (e.g. Render)."
+        )
     return value
 
 
